@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Me-Thriving offers evidence-informed preventive wellness education focused on stress management, nutrition, and whole-person well-being.">
+  <title>Me-Thriving | Preventive Wellness</title>
+  <style>
+    :root {
+      --sage: #e8eee6;
+      --deep-sage: #526b58;
+      --gold: #b39a5b;
+      --cream: #fbfaf6;
+      --ink: #303a32;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.7;
+    }
+    header {
+      padding: 22px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      background: white;
+      border-bottom: 1px solid var(--sage);
+    }
+    .brand {
+      color: var(--deep-sage);
+      font-family: Georgia, serif;
+      font-size: 26px;
+      font-weight: bold;
+    }
+    nav a {
+      color: var(--deep-sage);
+      text-decoration: none;
+      margin-left: 18px;
+      font-size: 14px;
+    }
+    .hero {
+      padding: 90px 8%;
+      text-align: center;
+      background: var(--sage);
+    }
+    .eyebrow {
+      color: var(--deep-sage);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    h1, h2 {
+      font-family: Georgia, serif;
+      font-weight: normal;
+      line-height: 1.2;
+    }
+    h1 {
+      max-width: 800px;
+      margin: 20px auto;
+      font-size: clamp(38px, 6vw, 62px);
+    }
+    h2 { font-size: 34px; color: var(--deep-sage); }
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto 28px;
+      font-size: 18px;
+    }
+    .button {
+      display: inline-block;
+      padding: 13px 25px;
+      background: var(--deep-sage);
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+    section { padding: 65px 8%; }
+    .center { text-align: center; }
+    .gold-line {
+      width: 65px;
+      height: 2px;
+      background: var(--gold);
+      margin: 20px auto;
+    }
+    .intro {
+      max-width: 760px;
+      margin: auto;
+      font-size: 17px;
+    }
+    .services {
+      background: white;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+      margin-top: 32px;
+    }
+    .card {
+      padding: 25px;
+      background: var(--cream);
+      border-top: 3px solid var(--gold);
+    }
+    .card h3 { color: var(--deep-sage); }
+    .about { max-width: 820px; margin: auto; }
+    footer {
+      padding: 30px 8%;
+      text-align: center;
+      background: var(--deep-sage);
+      color: white;
+      font-size: 14px;
+    }
+    footer a { color: white; }
+    @media (max-width: 600px) {
+      header { justify-content: center; }
+      nav { text-align: center; }
+      nav a { margin: 0 7px; }
+      .hero { padding: 65px 7%; }
+      section { padding: 48px 7%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">Me-Thriving</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">Preventive Wellness · Whole-Person Care</div>
+      <h1>Your health is more than the absence of illness.</h1>
+      <div class="gold-line"></div>
+      <p>
+        Understand the connections between stress, nutrition,
+        daily habits, and well-being with an evidence-informed,
+        nursing perspective.
+      </p>
+      <a class="button" href="#contact">Connect with Me</a>
+    </section>
+
+    <section id="about" class="center">
+      <div class="about">
+        <div class="eyebrow">Welcome to Me-Thriving</div>
+        <h2>A more proactive approach to well-being</h2>
+        <p class="intro">
+          I am a Registered Nurse with experience since 1998,
+          an IIN-trained nutrition professional, and a preventive
+          wellness consultant. My approach brings together nursing
+          insights, nutrition education, and practical lifestyle
+          strategies to help people make informed choices for
+          their well-being.
+        </p>
+        <p class="intro">
+          I am also continuing my education in functional medicine
+          to deepen my understanding of whole-person health.
+        </p>
+      </div>
+    </section>
+
+    <section id="services" class="services">
+      <div class="center">
+        <div class="eyebrow">How I Can Help</div>
+        <h2>Small steps. Greater awareness.</h2>
+        <p>Practical wellness education designed around everyday life.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3>Stress & Resilience</h3>
+          <p>Explore practical approaches to stress management,
+          relaxation, and everyday resilience.</p>
+        </article>
+        <article class="card">
+          <h3>Nutrition & Lifestyle</h3>
+          <p>Build awareness of nutrition, daily habits, sleep,
+          and their role in overall well-being.</p>
+        </article>
+        <article class="card">
+          <h3>Preventive Wellness</h3>
+          <p>Connect everyday health patterns with informed,
+          proactive wellness choices.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="center">
+      <div class="eyebrow">Let's Connect</div>
+      <h2>Begin your wellness conversation.</h2>
+      <p>
+        Interested in learning more about Me-Thriving
+        or exploring a wellness consultation?
+      </p>
+      <p>Please check back soon for contact and booking details.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Me-Thriving · Preventive Wellness Consultancy</p>
+    <p>Wellness education is not a substitute for individualized
+    medical care, diagnosis, or treatment.</p>
+    <p>© 2026 Me-Thriving</p>
+  </footer>
+</body>
+</html>
