@@ -1,610 +1,979 @@
-<!doctype html>
+ 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Me-Thriving offers evidence-informed preventive wellness education focused on stress management, nutrition, lifestyle habits, and whole-person well-being.">
-  <meta name="theme-color" content="#e8eee6">
-  <title>Me-Thriving | Preventive Wellness</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Me-Thriving | Preventive Wellness Consulting</title>
+
+  <meta name="description" content="Me-Thriving offers evidence-informed preventive wellness consulting to help busy professionals understand the connections between stress, energy, sleep, nutrition, and everyday health.">
+
+  <meta name="theme-color" content="#e5ebe2">
 
   <style>
     :root {
-      --sage: #e8eee6;
-      --deep-sage: #526b58;
-      --gold: #b39a5b;
+      --sage: #e5ebe2;
+      --light-sage: #f2f5f0;
+      --deep-sage: #506b59;
+      --dark-sage: #344b3c;
+      --gold: #b69a5b;
       --cream: #fbfaf6;
-      --ink: #303a32;
       --white: #ffffff;
+      --text: #354238;
+      --muted: #657067;
+      --border: #d9dfd5;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
 
     body {
       margin: 0;
-      font-family: 'DM Sans', Arial, sans-serif;
-      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
       background: var(--cream);
       line-height: 1.7;
     }
 
-    a { color: inherit; }
+    a {
+      color: inherit;
+    }
 
-    .site-header {
-      padding: 20px 7%;
+    .container {
+      width: min(1120px, 88%);
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+
+    header {
+      background: var(--cream);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      z-index: 5;
+    }
+
+    .header-inner {
+      min-height: 82px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 18px;
-      flex-wrap: wrap;
-      background: var(--white);
-      border-bottom: 1px solid var(--sage);
+      gap: 24px;
     }
 
     .brand {
-      display: inline-flex;
+      display: flex;
       align-items: center;
       gap: 12px;
-      color: var(--deep-sage);
       text-decoration: none;
     }
 
-    /* LOGO: Replace the temporary symbol with your logo later. */
-    .brand-logo {
-      width: 58px;
-      height: 58px;
-      object-fit: contain;
-      border-radius: 50%;
-      flex: 0 0 auto;
-    }
-
-    .brand-mark {
-      display: grid;
-      place-items: center;
-      width: 44px;
-      height: 44px;
-      border: 1px solid var(--gold);
-      border-radius: 50%;
+    .brand-symbol {
       color: var(--gold);
+      font-size: 35px;
+      line-height: 1;
+    }
+
+    .brand-name {
+      color: var(--dark-sage);
+      font-family: Georgia, "Times New Roman", serif;
       font-size: 25px;
+      letter-spacing: 1px;
     }
 
-    .brand strong {
+    .brand-subtitle {
       display: block;
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 27px;
-      line-height: 1.1;
-    }
-
-    .brand small {
-      display: block;
-      margin-top: 5px;
-      font-size: 9px;
-      letter-spacing: 1.4px;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
     nav {
       display: flex;
       align-items: center;
-      gap: 22px;
-      flex-wrap: wrap;
+      gap: 25px;
     }
 
     nav a {
-      color: var(--deep-sage);
       text-decoration: none;
       font-size: 14px;
+      transition: color 0.2s ease;
     }
 
-    nav a:hover { text-decoration: underline; }
+    nav a:hover {
+      color: var(--deep-sage);
+    }
 
     .nav-cta {
+      padding: 10px 18px;
       border: 1px solid var(--gold);
-      padding: 8px 13px;
       border-radius: 3px;
     }
 
-    .hero {
-      padding: 76px 8%;
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr);
-      align-items: center;
-      gap: 54px;
-      background: var(--sage);
-    }
-
-    .eyebrow {
-      margin: 0 0 14px;
-      color: var(--deep-sage);
-      text-transform: uppercase;
-      letter-spacing: 2.4px;
-      font-size: 11px;
-      font-weight: 700;
-    }
-
-    h1, h2 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-weight: 500;
-      line-height: 1.18;
-    }
-
-    h1 {
-      margin: 12px 0 20px;
-      font-size: clamp(38px, 5.5vw, 62px);
-    }
-
-    h1 em {
-      color: var(--deep-sage);
-      font-weight: 500;
-    }
-
-    h2 {
-      margin: 10px 0 18px;
-      color: var(--deep-sage);
-      font-size: clamp(29px, 3.4vw, 39px);
-    }
-
-    h3 {
-      margin: 10px 0 8px;
-      color: var(--deep-sage);
-      font-size: 18px;
-    }
-
-    p { margin-top: 0; }
-
-    .lead {
-      max-width: 650px;
-      font-size: 17px;
-    }
+    /* BUTTONS */
 
     .button {
       display: inline-block;
-      margin-top: 10px;
-      padding: 13px 22px;
-      border: 1px solid var(--deep-sage);
-      border-radius: 3px;
+      padding: 13px 23px;
       background: var(--deep-sage);
       color: var(--white);
+      border: 1px solid var(--deep-sage);
+      border-radius: 3px;
       text-decoration: none;
-      font-weight: 600;
       font-size: 14px;
-      transition: transform .15s ease, background .15s ease;
+      transition: background 0.2s ease;
     }
 
     .button:hover {
-      background: #405646;
-      transform: translateY(-1px);
+      background: var(--dark-sage);
     }
 
-    .button.secondary {
-      background: transparent;
+    .button-outline {
+      display: inline-block;
+      padding: 12px 22px;
+      border: 1px solid var(--gold);
+      border-radius: 3px;
+      text-decoration: none;
+      color: var(--dark-sage);
+    }
+
+    .button-outline:hover {
+      background: var(--white);
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 64px 0;
+      background: var(--sage);
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      align-items: center;
+      gap: 52px;
+    }
+
+    .eyebrow {
+      margin: 0 0 16px;
       color: var(--deep-sage);
-      border-color: var(--gold);
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
-    .button.secondary:hover {
-      background: rgba(255,255,255,.5);
+    h1,
+    h2,
+    h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: normal;
+    }
+
+    .hero h1 {
+      margin: 0;
+      color: var(--dark-sage);
+      font-size: clamp(38px, 4.5vw, 56px);
+      line-height: 1.17;
+      letter-spacing: -1px;
+    }
+
+    .hero h1 em {
+      display: block;
+      margin-top: 8px;
+      color: var(--deep-sage);
+      font-weight: normal;
+    }
+
+    .gold-line {
+      width: 65px;
+      height: 3px;
+      margin: 24px 0;
+      background: var(--gold);
+    }
+
+    .hero-copy .lead {
+      max-width: 490px;
+      margin: 0 0 26px;
+      color: #4f5e52;
+      font-size: 16px;
     }
 
     .microcopy {
-      margin: 14px 0 0;
+      margin-top: 20px;
+      color: var(--muted);
       font-size: 12px;
-      color: #59665b;
+      letter-spacing: 0.3px;
     }
 
-    /* Decorative artwork requires no separate image file. */
-    .hero-art {
-      min-height: 330px;
+    /* NURSE AND CLIENT PHOTO */
+
+    .hero-photo {
       position: relative;
+      width: 100%;
+      height: 460px;
       overflow: hidden;
+      border: 1px solid var(--gold);
       border-radius: 48% 48% 4px 4px;
-      background: linear-gradient(145deg, #d4dfd0, #f6f3e9 72%);
-      border: 1px solid rgba(179,154,91,.55);
+      background: #dce5da;
     }
 
-    .sun {
-      position: absolute;
-      width: 155px;
-      height: 155px;
-      right: 18%;
-      top: 13%;
-      border-radius: 50%;
-      background: rgba(179,154,91,.48);
-    }
-
-    .leaf {
-      position: absolute;
-      width: 95px;
-      height: 190px;
-      background: #7d947d;
-      opacity: .8;
-      border-radius: 100% 0 100% 0;
-      transform-origin: bottom center;
-    }
-
-    .leaf-one {
-      left: 24%;
-      bottom: 4%;
-      transform: rotate(-28deg);
-    }
-
-    .leaf-two {
-      left: 43%;
-      bottom: 2%;
-      transform: rotate(24deg) scale(.85);
-      background: #526b58;
-    }
-
-    .art-card {
-      position: absolute;
-      left: 8%;
-      right: 8%;
-      bottom: 8%;
-      padding: 22px;
-      background: rgba(251,250,246,.94);
-      border-top: 2px solid var(--gold);
-    }
-
-    .art-card span {
+    .hero-photo img {
       display: block;
-      margin-bottom: 7px;
-      font-size: 10px;
-      letter-spacing: 2px;
-      color: var(--deep-sage);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
     }
 
-    .art-card strong {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 20px;
-      font-weight: 500;
+    .photo-fallback {
+      display: none;
+      height: 100%;
+      padding: 30px;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--dark-sage);
     }
 
-    .section { padding: 68px 8%; }
-    .center { text-align: center; }
-    .intro { max-width: 1080px; margin: auto; }
-
-    .section-intro {
-      max-width: 760px;
-      margin: 0 auto 32px;
-      font-size: 17px;
+    .photo-fallback p {
+      max-width: 280px;
     }
 
-    .feature-grid, .service-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 32px;
-      text-align: left;
+    /* INTRODUCTION */
+
+    .intro {
+      padding: 78px 0;
+      text-align: center;
     }
 
-    .feature, .service-card {
-      padding: 23px;
-      background: var(--white);
-      border-top: 3px solid var(--gold);
-    }
-
-    .feature-icon {
-      display: inline-block;
+    .section-label {
+      margin: 0 0 10px;
       color: var(--gold);
-      font-size: 27px;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      margin: 0 auto 18px;
+      color: var(--dark-sage);
+      font-size: clamp(30px, 3.5vw, 42px);
+      line-height: 1.25;
+    }
+
+    .section-description {
+      max-width: 720px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    /* FOUR WELLNESS AREAS */
+
+    .areas {
+      padding: 62px 0 72px;
+      background: var(--light-sage);
+    }
+
+    .center-heading {
+      margin-bottom: 36px;
+      text-align: center;
+    }
+
+    .area-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .area-card {
+      padding: 28px 20px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .area-icon {
+      display: block;
+      margin-bottom: 13px;
+      color: var(--gold);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 31px;
+    }
+
+    .area-card h3 {
+      margin: 0 0 10px;
+      color: var(--dark-sage);
+      font-size: 21px;
+      line-height: 1.3;
+    }
+
+    .area-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    /* ABOUT */
+
+    .about {
+      padding: 82px 0;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.75fr 1.25fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .about-art {
+      min-height: 330px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 35px;
+      background: var(--sage);
+      border-radius: 48% 48% 4px 4px;
+      text-align: center;
+    }
+
+    .about-art-inner {
+      max-width: 250px;
+    }
+
+    .about-art .decorative-mark {
+      color: var(--gold);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 64px;
       line-height: 1;
     }
 
-    .feature p, .service-card p {
-      margin-bottom: 0;
+    .about-art p {
+      margin: 15px 0 0;
+      color: var(--dark-sage);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 24px;
+      line-height: 1.4;
+    }
+
+    .about-copy h2 {
+      margin: 0 0 20px;
+      color: var(--dark-sage);
+      font-size: clamp(30px, 3.5vw, 42px);
+      line-height: 1.25;
+    }
+
+    .about-copy p {
+      margin: 0 0 16px;
+      color: var(--muted);
+    }
+
+    .credentials {
+      margin-top: 24px;
+      padding-left: 18px;
+      border-left: 3px solid var(--gold);
+      color: var(--deep-sage);
       font-size: 14px;
     }
 
-    .services { background: var(--white); }
+    /* SERVICES */
 
-    .service-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .about {
-      display: grid;
-      grid-template-columns: 100px minmax(0, 760px);
-      justify-content: center;
-      align-items: start;
-      gap: 30px;
-    }
-
-    .about-symbol {
-      display: grid;
-      place-items: center;
-      width: 82px;
-      height: 82px;
-      border: 1px solid var(--gold);
-      border-radius: 50%;
-      color: var(--gold);
-      font-size: 42px;
-    }
-
-    .about p { max-width: 760px; }
-    .credentials { padding-left: 20px; }
-    .credentials li { margin: 5px 0; }
-
-    .closing {
-      text-align: center;
+    .services {
+      padding: 78px 0;
       background: var(--sage);
     }
 
-    .closing > p:not(.eyebrow):not(.microcopy) {
-      max-width: 680px;
-      margin: 0 auto 16px;
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
     }
 
-    .contact-details { margin-top: 25px; }
-
-    .contact-details a {
-      color: var(--deep-sage);
-      font-weight: 600;
+    .service-card {
+      padding: 32px 27px;
+      background: var(--cream);
+      border-top: 3px solid var(--gold);
     }
 
-    .schedule-note {
-      margin: 8px auto 0;
-      max-width: 580px;
-      font-size: 13px;
+    .service-number {
+      color: var(--gold);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 27px;
     }
 
-    footer {
-      padding: 28px 8%;
+    .service-card h3 {
+      margin: 14px 0 12px;
+      color: var(--dark-sage);
+      font-size: 23px;
+      line-height: 1.3;
+    }
+
+    .service-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* OUR APPROACH */
+
+    .approach {
+      padding: 76px 0;
       text-align: center;
+    }
+
+    .approach-content {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .approach-content p {
+      color: var(--muted);
+    }
+
+    .approach-note {
+      margin-top: 28px;
+      padding: 22px;
+      background: var(--light-sage);
+      border-left: 3px solid var(--gold);
+      text-align: left;
+      font-size: 14px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      padding: 75px 0;
       background: var(--deep-sage);
       color: var(--white);
-      font-size: 13px;
+      text-align: center;
     }
 
-    footer p { margin: 8px 0 0; }
+    .contact .section-label {
+      color: #e3d2a2;
+    }
 
-    .disclaimer {
-      max-width: 760px;
-      margin: 12px auto 0;
+    .contact h2 {
+      max-width: 700px;
+      margin: 0 auto 18px;
+      font-size: clamp(31px, 4vw, 43px);
+      line-height: 1.25;
+    }
+
+    .contact p {
+      max-width: 620px;
+      margin: 0 auto 25px;
+      color: #edf1eb;
+    }
+
+    .contact .button {
+      background: var(--cream);
+      color: var(--dark-sage);
+      border-color: var(--cream);
+    }
+
+    .contact .button:hover {
+      background: var(--sage);
+    }
+
+    .contact-email {
+      display: block;
+      margin-top: 22px;
+      color: var(--white);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .contact-note {
+      margin-top: 26px !important;
       font-size: 12px;
-      opacity: .9;
+      opacity: 0.85;
     }
+
+    /* FOOTER */
+
+    footer {
+      padding: 26px 0;
+      background: var(--cream);
+      text-align: center;
+    }
+
+    footer p {
+      margin: 5px 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    footer a {
+      color: var(--deep-sage);
+    }
+
+    /* MOBILE RESPONSIVENESS */
 
     @media (max-width: 850px) {
-      .hero {
+      .hero-inner {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 35px;
       }
 
-      .hero-art {
-        min-height: 290px;
-        max-width: 520px;
-        width: 100%;
-        margin: auto;
+      .hero-copy {
+        max-width: 650px;
       }
 
-      .feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .service-grid { grid-template-columns: 1fr; }
+      .hero-photo {
+        height: 420px;
+        max-width: 620px;
+        margin: 0 auto;
+      }
+
+      .area-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .about-art {
+        min-height: 250px;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 600px) {
-      .site-header {
-        justify-content: center;
-        padding: 18px 6%;
+      .container {
+        width: 90%;
+      }
+
+      .header-inner {
+        padding: 16px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
       }
 
       nav {
-        justify-content: center;
-        gap: 13px;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 13px 19px;
       }
 
-      nav a { font-size: 13px; }
-      .brand strong { font-size: 25px; }
-      .brand small { font-size: 8px; letter-spacing: 1px; }
-      .hero { padding: 55px 7%; }
-      .section { padding: 48px 7%; }
-      .feature-grid { grid-template-columns: 1fr; }
+      nav a {
+        font-size: 13px;
+      }
 
-      .about {
+      .brand-name {
+        font-size: 23px;
+      }
+
+      .hero {
+        padding: 45px 0;
+      }
+
+      .hero h1 {
+        font-size: 39px;
+      }
+
+      .hero-photo {
+        height: 340px;
+      }
+
+      .intro,
+      .about,
+      .approach {
+        padding: 56px 0;
+      }
+
+      .areas,
+      .services,
+      .contact {
+        padding: 58px 0;
+      }
+
+      .area-grid {
         grid-template-columns: 1fr;
-        gap: 18px;
       }
 
-      .about-symbol {
-        width: 60px;
-        height: 60px;
-        font-size: 30px;
+      .area-card {
+        padding: 25px;
       }
     }
   </style>
 </head>
 
 <body>
-  <header class="site-header">
-    <!-- LOGO: We can add your circular logo here later. -->
-    <a class="brand" href="#top" aria-label="Me-Thriving home">
-      <span class="brand-mark" aria-hidden="true">✳</span>
-      <span>
-        <strong>Me-Thriving</strong>
-        <small>PREVENTIVE WELLNESS · WHOLE-PERSON CARE</small>
-      </span>
-    </a>
 
-    <nav aria-label="Main navigation">
-      <a href="#approach">My Approach</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a class="nav-cta" href="#contact">Get in Touch</a>
-    </nav>
+  <!-- HEADER -->
+  <header>
+    <div class="container header-inner">
+
+      <a class="brand" href="#home" aria-label="Me-Thriving home">
+        <span class="brand-symbol" aria-hidden="true">✳</span>
+        <span>
+          <span class="brand-name">Me-Thriving</span>
+          <span class="brand-subtitle">Preventive Wellness</span>
+        </span>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a href="#approach">Our Approach</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a class="nav-cta" href="#contact">Let's Connect</a>
+      </nav>
+
+    </div>
   </header>
 
-  <main id="top">
-    
-<section class="hero">
-  <div class="hero-copy">
-    <p class="eyebrow">
-      Preventive Wellness · Whole-Person Care
-    </p>
+  <main>
 
-    <h1>
-      Understand your patterns.
-      <em>Support your well-being.</em>
-    </h1>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container hero-inner">
 
-    <div class="gold-line"></div>
+        <div class="hero-copy">
+          <p class="eyebrow">
+            Preventive Wellness · Whole-Person Care
+          </p>
 
-    <p class="lead">
-      Understand the connections between stress, energy,
-      sleep, nutrition, and everyday health through an
-      evidence-informed nursing perspective.
-    </p>
+          <h1>
+            Understand your patterns.
+            <em>Support your well-being.</em>
+          </h1>
 
-    <a class="button" href="#contact">
-      Let's Connect <span aria-hidden="true">→</span>
-    </a>
+          <div class="gold-line"></div>
 
-    <p class="microcopy">
-      Nursing experience · Preventive wellness ·
-      Practical lifestyle education
-    </p>
-  </div>
+          <p class="lead">
+            Understand the connections between stress, energy,
+            sleep, nutrition, and everyday health through an
+            evidence-informed nursing perspective.
+          </p>
 
-  <div class="hero-photo">
-    <img
-      src="nurse-client.png"
-      alt="A nurse having a warm, attentive conversation with a client"
-    >
-  </div>
-</section>
-
-
-    <section class="intro section center" id="approach">
-      <p class="eyebrow">A Whole-Person Perspective</p>
-      <h2>A more proactive approach to well-being</h2>
-      <p class="section-intro">
-        Busy schedules can make it easy to overlook changes in energy, sleep,
-        focus, and stress tolerance. Understanding these patterns can help you
-        make informed choices about your health.
-      </p>
-
-      <div class="feature-grid">
-        <article class="feature">
-          <span class="feature-icon" aria-hidden="true">◎</span>
-          <h3>Stress &amp; Resilience</h3>
-          <p>Explore practical approaches to stress management, relaxation, and everyday resilience.</p>
-        </article>
-
-        <article class="feature">
-          <span class="feature-icon" aria-hidden="true">⌁</span>
-          <h3>Energy &amp; Metabolism</h3>
-          <p>Explore the roles of nutrition, sleep, movement, and other health factors.</p>
-        </article>
-
-        <article class="feature">
-          <span class="feature-icon" aria-hidden="true">☾</span>
-          <h3>Sleep &amp; Restoration</h3>
-          <p>Develop realistic habits that support rest, recovery, and daily well-being.</p>
-        </article>
-
-        <article class="feature">
-          <span class="feature-icon" aria-hidden="true">♡</span>
-          <h3>Whole-Person Wellness</h3>
-          <p>Connect everyday health patterns with informed, proactive wellness choices.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="services" class="services section">
-      <div class="center">
-        <p class="eyebrow">How I Can Help</p>
-        <h2>Small steps. Greater awareness.</h2>
-        <p>Practical wellness education designed around everyday life.</p>
-      </div>
-
-      <div class="service-grid">
-        <article class="service-card">
-          <h3>Stress &amp; Nervous System</h3>
-          <p>Explore how stress, relaxation, and recovery can influence everyday well-being.</p>
-        </article>
-
-        <article class="service-card">
-          <h3>Nutrition &amp; Lifestyle</h3>
-          <p>Build awareness of nutrition, daily habits, sleep, and their role in overall well-being.</p>
-        </article>
-
-        <article class="service-card">
-          <h3>Preventive Wellness</h3>
-          <p>Connect everyday health patterns with informed, proactive wellness choices.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="about section" id="about">
-      <div class="about-symbol" aria-hidden="true">✳</div>
-
-      <div>
-        <p class="eyebrow">Experience Grounded in Nursing</p>
-        <h2>Focused on prevention.</h2>
-        <p>
-          I am a Registered Nurse with experience dating back to 1998,
-          an IIN-trained nutrition professional, and a preventive wellness consultant.
-        </p>
-        <p>
-          My approach combines nursing insights, nutrition education, and practical
-          lifestyle strategies to help people connect the dots between health patterns,
-          recognize the cues their bodies provide, and make informed choices that
-          support long-term well-being.
-        </p>
-
-        <ul class="credentials">
-          <li>Registered Nurse</li>
-          <li>IIN-trained nutrition professional</li>
-          <li>Preventive wellness consulting</li>
-          <li>Practical, evidence-informed lifestyle guidance</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="closing section" id="contact">
-      <p class="eyebrow">Let’s Connect</p>
-      <h2>Begin your wellness conversation.</h2>
-      <p>
-        Interested in learning more about Me-Thriving or exploring a wellness
-        consultation? Reach out by email or use the scheduling option below.
-      </p>
-
-      <div class="contact-details">
-        <p>
-          Email:
-          <a href="mailto:info@me-thriving.com?subject=Me-Thriving%20Wellness%20Inquiry">
-            info@me-thriving.com
+          <a class="button" href="#contact">
+            Let's Connect <span aria-hidden="true">→</span>
           </a>
+
+          <p class="microcopy">
+            Nursing experience · Preventive wellness ·
+            Practical lifestyle education
+          </p>
+        </div>
+
+        <div class="hero-photo">
+          <img
+            src="nurse-client.png"
+            alt="A nurse having a warm, attentive conversation with a client"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          >
+
+          <div class="photo-fallback">
+            <p>
+              Your nurse-and-client photo will appear here once
+              nurse-client.png is uploaded to your GitHub repository.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INTRODUCTION -->
+    <section class="intro">
+      <div class="container">
+
+        <p class="section-label">A More Thoughtful Approach</p>
+
+        <h2 class="section-title">
+          Your body deserves more than a quick fix.
+        </h2>
+
+        <p class="section-description">
+          Everyday health is influenced by many interconnected
+          factors. Understanding your patterns can help you make
+          informed, practical choices that support your well-being
+          over time.
         </p>
 
-        <!-- SCHEDULING: Replace #schedule with your actual booking URL when ready. -->
-        <a class="button secondary" href="#schedule" aria-label="Go to scheduling information">
-          Schedule a Consultation
+      </div>
+    </section>
+
+    <!-- FOUR WELLNESS AREAS -->
+    <section class="areas" id="approach">
+      <div class="container">
+
+        <div class="center-heading">
+          <p class="section-label">The Bigger Picture</p>
+          <h2 class="section-title">
+            Connect the dots in your health.
+          </h2>
+          <p class="section-description">
+            Explore the everyday factors that contribute to
+            how you feel, function, and recover.
+          </p>
+        </div>
+
+        <div class="area-grid">
+
+          <article class="area-card">
+            <span class="area-icon" aria-hidden="true">✧</span>
+            <h3>Stress &amp; Nervous System</h3>
+            <p>
+              Understand how ongoing stress and daily demands
+              may affect your sense of balance and well-being.
+            </p>
+          </article>
+
+          <article class="area-card">
+            <span class="area-icon" aria-hidden="true">❋</span>
+            <h3>Energy &amp; Metabolism</h3>
+            <p>
+              Explore the role of nutrition, movement, recovery,
+              and daily habits in supporting energy.
+            </p>
+          </article>
+
+          <article class="area-card">
+            <span class="area-icon" aria-hidden="true">☾</span>
+            <h3>Sleep &amp; Restoration</h3>
+            <p>
+              Learn about routines and lifestyle practices that
+              support restful sleep and recovery.
+            </p>
+          </article>
+
+          <article class="area-card">
+            <span class="area-icon" aria-hidden="true">❀</span>
+            <h3>Whole-Person Wellness</h3>
+            <p>
+              Consider how daily habits, relationships,
+              emotional well-being, and lifestyle fit together.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <div class="container about-grid">
+
+        <div class="about-art">
+          <div class="about-art-inner">
+            <div class="decorative-mark" aria-hidden="true">✳</div>
+            <p>
+              Care that looks at the whole person.
+            </p>
+          </div>
+        </div>
+
+        <div class="about-copy">
+          <p class="section-label">About Me-Thriving</p>
+
+          <h2>
+            Nursing insight. A preventive perspective.
+          </h2>
+
+          <p>
+            Health is personal, and the factors that shape it
+            are often connected. Me-Thriving brings a nursing
+            perspective to preventive wellness, helping people
+            explore their everyday health patterns and identify
+            practical opportunities for positive change.
+          </p>
+
+          <p>
+            With nursing experience dating back to 1998,
+            including case management across adult and pediatric
+            care, I bring a foundation in patient-centered care
+            and care coordination to my wellness work.
+          </p>
+
+          <p>
+            As an IIN-trained nutrition professional, I also
+            value the role of nutrition and sustainable lifestyle
+            habits in supporting whole-person well-being.
+          </p>
+
+          <div class="credentials">
+            Registered Nurse · IIN-trained nutrition professional
+            · Preventive wellness consulting
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+      <div class="container">
+
+        <div class="center-heading">
+          <p class="section-label">How We Can Work Together</p>
+
+          <h2 class="section-title">
+            Practical support for everyday well-being.
+          </h2>
+
+          <p class="section-description">
+            Explore lifestyle patterns, build awareness, and
+            identify realistic steps that fit your life.
+          </p>
+        </div>
+
+        <div class="service-grid">
+
+          <article class="service-card">
+            <span class="service-number">01</span>
+            <h3>Stress &amp; Nervous System</h3>
+            <p>
+              Explore the effects of everyday stress and learn
+              practical relaxation, breathing, and mindfulness
+              techniques that can support calm and focus.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">02</span>
+            <h3>Nutrition &amp; Lifestyle</h3>
+            <p>
+              Review everyday patterns involving food, movement,
+              sleep, and routines to identify realistic habits
+              that support your personal wellness goals.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">03</span>
+            <h3>Preventive Wellness</h3>
+            <p>
+              Take a more proactive approach to well-being by
+              connecting lifestyle patterns, building health
+              awareness, and planning practical next steps.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- APPROACH -->
+    <section class="approach">
+      <div class="container approach-content">
+
+        <p class="section-label">Our Philosophy</p>
+
+        <h2 class="section-title">
+          Small, informed steps can make a meaningful difference.
+        </h2>
+
+        <p>
+          Wellness is not about perfection or following a
+          one-size-fits-all plan. It is about understanding
+          your own circumstances, recognizing patterns, and
+          making thoughtful choices you can sustain.
+        </p>
+
+        <p>
+          Our approach emphasizes evidence-informed education,
+          practical lifestyle strategies, and care for the
+          whole person.
+        </p>
+
+        <div class="approach-note">
+          <strong>A note about care:</strong>
+          Me-Thriving provides preventive wellness education
+          and consulting. It does not replace medical diagnosis,
+          treatment, or care from your licensed healthcare
+          provider. Recommendations are tailored to the
+          individual's needs and remain within the appropriate
+          professional scope.
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="container">
+
+        <p class="section-label">Start a Conversation</p>
+
+        <h2>
+          Ready to take a more thoughtful approach to your well-being?
+        </h2>
+
+        <p>
+          Let's connect and explore how preventive wellness
+          education and practical lifestyle strategies may
+          support your goals.
+        </p>
+
+        <a
+          class="button"
+          href="mailto:info@me-thriving.com?subject=Me-Thriving%20Wellness%20Inquiry"
+        >
+          Email Me-Thriving
         </a>
 
-        <p class="schedule-note" id="schedule">
-          Scheduling link coming soon. This button is ready for your booking link
-          when you choose your scheduling tool.
-        </p>
-      </div>
+        <a
+          class="contact-email"
+          href="mailto:info@me-thriving.com"
+        >
+          info@me-thriving.com
+        </a>
 
-      <p class="microcopy">Me-Thriving · Wellness begins with understanding.</p>
+        <p class="contact-note">
+          A scheduling option can be added here when your
+          preferred booking service is ready.
+        </p>
+
+      </div>
     </section>
+
   </main>
 
+  <!-- FOOTER -->
   <footer>
-    <span>© <span id="year"></span> Me-Thriving</span>
-    <span> · Evidence-informed wellness education</span>
-    <p class="disclaimer">
-      Wellness education is not a substitute for individualized medical care,
-      diagnosis, or treatment.
-    </p>
+    <div class="container">
+      <p>
+        <strong>Me-Thriving</strong> · Preventive Wellness Consulting
+      </p>
+      <p>
+        Evidence-informed education. Practical steps.
+        Whole-person well-being.
+      </p>
+      <p>
+        © <span id="year">2026</span> Me-Thriving. All rights reserved.
+      </p>
+      <p>
+        This website provides general wellness information
+        and is not a substitute for individualized medical care.
+      </p>
+    </div>
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
   </script>
+
 </body>
 </html>
-
